@@ -32,12 +32,9 @@ export function EMProvider({ children }) {
     if (!emailIsValid(email)) {
       setShowEmailError(true);
     }
-
-    console.log("Checking for Email");
   };
   const removeErrorMessage = (e) => {
     setShowEmailError(false);
-    console.log("Removing Error Message");
   };
 
   const submittedForm = (e) => {
@@ -46,7 +43,6 @@ export function EMProvider({ children }) {
       setFormCompleted(true);
       setTimeout(() => {
         closeModalAction();
-        console.log(showEmailError);
       }, 3000);
     }
   };

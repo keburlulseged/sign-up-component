@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useStateContext } from "./EMProvider";
 import Cookies from "js-cookie";
-import classNames from "classnames";
+
 
 const EmailModal = () => {
   const newState = useStateContext();
@@ -13,16 +13,14 @@ const EmailModal = () => {
         // Just to clean things up first
       }
     });
-  }, []);
+  }, [newState]);
 
 
-    if (newState.formCompleted == true) {
+    if (newState.formCompleted === true) {
       thankYouMessage = "email-thank email-thank--success"
     }
-    console.log(newState.formCompleted)
-    console.log('^^^^^^^^^^^^')
 
-  console.log(newState);
+
   return (
     <section
       className={`email-modal ${
@@ -81,7 +79,7 @@ const EmailModal = () => {
           </div>
         </form>
         <div className="email-modal__side-img">
-          <img src="img/pexels-photo-4462782.jpeg" />
+          <img src="img/pexels-photo-4462782.jpeg" alt='promo-shoes' />
         </div>
         <div
           className={thankYouMessage}
